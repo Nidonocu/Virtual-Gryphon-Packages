@@ -22,10 +22,10 @@
           {{ listingInfo.Author.Email }}
         </fluent-tooltip>
         {{~ end; ~}}
-        <div class="caption1 mb-2" id="publishedByText">Published by <i class="fa-brands {{listingInfo.Author.Icon}}"></i> <a href="{{listingInfo.Author.Url}}" target="_blank">{{ listingInfo.Author.Name }}</a></div>
+        <div class="caption1 mb-2" id="publishedByText">Published by <i class="fa-brands fa-twitter"></i> <a href="{{listingInfo.Author.Url}}" target="_blank">{{ listingInfo.Author.Name }}</a></div>
         {{~ if listingInfo.InfoLink.Url ~}}
           <div class="caption1" id="publishedByText">
-            <i class="fa-brands {{listingInfo.InfoLink.Icon}}"></i>  <a href="{{listingInfo.InfoLink.Url}}" target="_blank">{{ if listingInfo.InfoLink.Text; listingInfo.InfoLink.Text; else; "Lean More"; end; }}</a>
+            <i class="fa-brands fa-github"></i>  <a href="{{listingInfo.InfoLink.Url}}" target="_blank">{{ if listingInfo.InfoLink.Text; listingInfo.InfoLink.Text; else; "Lean More"; end; }}</a>
           </div>
         {{~ end; ~}}
       </div>
@@ -91,10 +91,8 @@
     </div>
     <fluent-menu id="rowMoreMenu" hidden>
       <fluent-menu-item id="rowMoreMenuDownload">
-        <i class="fa-solid fa-file-zipper"></i> 
-        <div>
-          Download .ZIP
-        </div>
+        <i class="fa-solid fa-file-zipper me-1"></i> 
+         Download .ZIP
       </fluent-menu-item>
     </fluent-menu>
     <fluent-dialog id="packageInfoModal" hidden modal>

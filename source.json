@@ -5,14 +5,12 @@
     "author":{
         "email":"nidonocu@gmail.com",
         "name":"Nidonocu",
-        "url":"https://twitter.com/nidonocu",
-        "icon":"fa-twitter"
+        "url":"https://twitter.com/nidonocu"
     },
     "description":"Tools for Unity and VRChat projects created by Nidonocu.",
     "infoLink":{
         "url":"https://github.com/Nidonocu",
-        "text":"View my other projects on GitHub",
-        "icon": "fa-github"
+        "text":"View my other projects on GitHub"
     },
     "bannerUrl":"banner.png",
     "githubRepos":[
