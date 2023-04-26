@@ -1,4 +1,5 @@
-import { baseLayerLuminance, StandardLuminance } from 'https://unpkg.com/@fluentui/web-components';
+import { parseColorHexRGB } from "https://unpkg.com/@microsoft/fast-colors";
+import { baseLayerLuminance, accentBaseColor, StandardLuminance } from 'https://unpkg.com/@fluentui/web-components';
 
 const LISTING_URL = "{{ listingInfo.Url }}";
 
@@ -25,6 +26,7 @@ const PACKAGES = {
     ],
     license: "{{ package.License }}",
     licensesUrl: "{{ package.LicensesUrl }}",
+    documentationUrl: "{{ package.DocumentationUrl }}"    
   },
 {{~ end ~}}
 };
@@ -36,6 +38,7 @@ const setTheme = () => {
   } else {
     baseLayerLuminance.setValueFor(document.documentElement, StandardLuminance.LightMode);
   }
+  accentBaseColor.setValueFor(document.documentElement, parseColorHexRGB('#3e2e4f'));
 }
 
 (() => {
@@ -151,6 +154,7 @@ const setTheme = () => {
   const packageInfoAuthor = document.getElementById('packageInfoAuthor');
   const packageInfoDependencies = document.getElementById('packageInfoDependencies');
   const packageInfoKeywords = document.getElementById('packageInfoKeywords');
+  const packageInfoDocs = document.getElementById('packageInfoDocs');
   const packageInfoLicense = document.getElementById('packageInfoLicense');
 
   const rowAddToVccButtons = document.querySelectorAll('.rowAddToVccButton');
@@ -186,6 +190,13 @@ const setTheme = () => {
           keywordDiv.textContent = keyword;
           packageInfoKeywords.appendChild(keywordDiv);
         });
+      }
+
+      if (!packageInfo.documentationUrl?.length) {
+        packageInfoDocs.parentElement.classList.add('hidden');
+      } else {
+        packageInfoDocs.parentElement.classList.remove('hidden');
+        packageInfoDocs.href = packageInfo.documentationUrl ?? '#';
       }
 
       if (!packageInfo.license?.length && !packageInfo.licensesUrl?.length) {

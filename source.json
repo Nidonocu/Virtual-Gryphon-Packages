@@ -5,12 +5,14 @@
     "author":{
         "email":"nidonocu@gmail.com",
         "name":"Nidonocu",
-        "url":"https://twitter.com/nidonocu"
+        "url":"https://twitter.com/nidonocu",
+        "icon":"fa-twitter"
     },
     "description":"Tools for Unity and VRChat projects created by Nidonocu.",
     "infoLink":{
-        "url":"https://github.com/Nidonocu/Virtual-Gryphon-Packages",
-        "text":"View on GitHub"
+        "url":"https://github.com/Nidonocu",
+        "text":"View my other projects on GitHub",
+        "icon": "fa-github"
     },
     "bannerUrl":"banner.png",
     "githubRepos":[
